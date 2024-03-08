@@ -1,0 +1,20 @@
+{% extends '../base.html' %}
+{% block content %}
+<div class="px-4 py-5 my-5 text-center">
+  <div class="text-primary">
+     <img style="height: 300px; width: 300px;" src="../static/images/Processor.png" alt="">
+  </div>
+  <h1 class="display-5 fw-bold text-primary"><i>PC DREAMS</i></h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4 text-black"><i><b>Welcome to our website. Here, you can choose a PC that's perfect for your needs. You can also read our reviews to learn more about our products</b></i></p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      {% if not user.is_authenticated %}
+      <a href="{% url 'sign_up_page' %}" class="btn btn-primary btn-lg px-4 gap-3">Sign up</a>
+      <a href="{% url 'login_page' %}" class="btn btn-primary btn-lg px-4">Login</a>
+      {% else %}
+      <a href="{% url 'top_films_page' %}" class="btn btn-outline-primary btn-lg px-4">Watch</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}
